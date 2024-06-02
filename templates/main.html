@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генеративный ИИ по созданию графических материалов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body onload="typeWriter()">
+<div class="container">
+    <h1 id="name"></h1>
+    <form method="post" id="frm" style="text-align: left; ">
+        <p>Выберите тип носителя материалов:<br></p>
+        <label><input type="radio" name="e" id="option1" value="1"> Информационные доски<br></label>
+        <label><input type="radio" name="e" id="option2" value="2"> Настольные демонстрационные системы (тейбл-тенты)<br></label>
+        <label><input type="radio" name="e" id="option3" value="3"> Экраны блокировки персональных компьютеров <br></label>
+        <label><input type="radio" name="e" id="option4" value="4"> Интранет-портал <br></label>
+        <label><input type="radio" name="e" id="option5" value="5"> Дайджест новостей (e-mail рассылка) <br></label>
+        <label><input type="radio" name="e" id="option6" value="6"> ТВ-панель <br></label>
+        <label><input type="radio" name="e" id="option7" value="7"> Информационное сообщение (новость, пост в канале) <br></label>
+        <p></p>
+        <input type="text" id="param1" placeholder="Информация о событии" name="prm1"/>
+        <input type="submit" value="Generate image" id="gg" name="sbm" class="sbm2">
+    </form>
+</div>
+<img id="generated-image" src="{{src}}" alt="No image yet" width="{{width}}" height="{{height}}"/>
+<script>
+    var i = 0;
+    var txt = 'Генеративный ИИ по созданию графических материалов'; /* The text */
+    var speed = 52; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("name").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+</script>
+</body>
+</html>
